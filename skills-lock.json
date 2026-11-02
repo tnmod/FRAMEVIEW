@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-ui-engineering": {
+      "source": "addyosmani/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-ui-engineering/SKILL.md",
+      "computedHash": "49bb6ccfc41753bdd679f368ce75629ae9d424c5b8abc33faf949a4a55f919a1"
+    },
+    "tauri-app-creator": {
+      "source": "full-stack-skills/tauri-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tauri-app-creator/SKILL.md",
+      "computedHash": "fa4d867d2c1a7c6ba4d57cee3369fa16848ef5a4bd4dc5e30a3b5d697ff63c9a"
+    },
+    "tauri-app-develop": {
+      "source": "full-stack-skills/tauri-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tauri-app-develop/SKILL.md",
+      "computedHash": "96232471a794bd571ea89e19ed1706e3f0a426e3b4ab5acf2a993eb7aeb0e6a4"
+    },
+    "tauri-app-planning": {
+      "source": "full-stack-skills/tauri-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tauri-app-planning/SKILL.md",
+      "computedHash": "f5095a3bf2169e48361943dbd7a251a3a1f33091816d0e3ce50c9403e5e6d0c1"
+    },
+    "tauri-build": {
+      "source": "full-stack-skills/tauri-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tauri-build/SKILL.md",
+      "computedHash": "45ac9e0576757a77e849ffd96dc3cab2834d3e05e2ca9853acfcb5af5dfef03e"
+    },
+    "tauri-config": {
+      "source": "full-stack-skills/tauri-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tauri-config/SKILL.md",
+      "computedHash": "f1e65f800261d5fe697e3e0fcf63ed1e6b9ed1c6d443cb4acc2b96b34f860dfa"
+    },
+    "tauri-ipc": {
+      "source": "full-stack-skills/tauri-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tauri-ipc/SKILL.md",
+      "computedHash": "2adabdbe52065698cdf0f9168744247c6d64b565cd53f24856c25d9e8aa8a036"
+    },
+    "tauri-security": {
+      "source": "full-stack-skills/tauri-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tauri-security/SKILL.md",
+      "computedHash": "2db3101748ea548529317e24d5e97a5f899b4f60999188b5075e73e49855c803"
+    },
+    "tauri-window": {
+      "source": "full-stack-skills/tauri-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tauri-window/SKILL.md",
+      "computedHash": "bbb18374f975dbd0f917fe1cd46d89380c361f93f35712bdc73c795d4efd5f04"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "6b526d013e28073246a36f99b529bc43745d30832ecfa8217b359c34f260ca6b"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "d8e7d3afe37dcc8a97b99ffb5afdb4d0919ae0092ea8b68f44eb201f035e33ac"
+    }
+  }
+}
