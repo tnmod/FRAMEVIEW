@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "tauri": "tauri",
     "test": "vitest run",
+    "setup:native": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/setup-native.ps1",
     "build:fast": "tauri build --no-bundle",
     "build:installer": "tauri build"
   },

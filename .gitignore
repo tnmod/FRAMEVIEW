@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+/desktop/lib/libmpv-2.dll
+/desktop/binaries/
+/desktop/lib/FFmpeg-LICENSE.txt
+/desktop/Microsoft.WebView2.FixedVersionRuntime.*/

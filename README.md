@@ -2,6 +2,8 @@
 
 FRAMEVIEW is a Windows video and audio player powered by libmpv. Step through video frame by frame, inspect media metadata with FFprobe, and jump to detected scene cuts directly from the timeline.
 
+Download and run the Windows x64 setup executable from [GitHub Releases](https://github.com/tnmod/FRAMEVIEW/releases/latest). The installer includes the WebView2 Runtime.
+
 ## Features
 
 - Open multiple files, drag and drop media, or load videos from a folder. Queue files for playback and resume from where you left off.
@@ -46,8 +48,8 @@ When you use a remote endpoint for verification, FRAMEVIEW sends the frames it n
 
 - 64-bit Windows.
 - Node.js 22.12 or later in the 22.x series, or Node.js 24.x, with npm.
-- Stable Rust with the `x86_64-pc-windows-msvc` toolchain, Microsoft C++ Build Tools with the **Desktop development with C++** workload, and Microsoft Edge WebView2 Runtime. [Tauri setup guide for Windows](https://v2.tauri.app/start/prerequisites/#windows)
-- `ffprobe.exe` from a static 64-bit Windows build of FFmpeg. [FFmpeg downloads](https://ffmpeg.org/download.html#build-windows)
+- Stable Rust with the `x86_64-pc-windows-msvc` toolchain and Microsoft C++ Build Tools with the **Desktop development with C++** workload. [Tauri setup guide for Windows](https://v2.tauri.app/start/prerequisites/#windows)
+- Windows PowerShell, `curl.exe`, `tar.exe`, and `expand.exe` for downloading and unpacking the native dependencies.
 
 ### Setup
 
@@ -59,13 +61,13 @@ cd FRAMEVIEW
 npm ci
 ```
 
-Create the `desktop/binaries` directory and copy the extracted `ffprobe.exe` to `desktop/binaries/ffprobe-x86_64-pc-windows-msvc.exe`. Tauri expects the executable at that path for development and production builds. The repository already includes the libmpv DLLs in `desktop/lib`. [Tauri sidecar naming guide](https://v2.tauri.app/develop/sidecar/)
-
-Start the desktop app.
+Start the desktop app. Tauri prepares pinned Windows x64 versions of libmpv, FFprobe, and WebView2 before starting Vite or building the installer. The setup verifies downloads with SHA-256 and reuses matching local copies. Update the pinned WebView2 version when publishing runtime security updates. [Microsoft's Fixed Version distribution guide](https://learn.microsoft.com/en-us/microsoft-edge/webview2/concepts/distribution#the-fixed-version-runtime-distribution-mode)
 
 ```powershell
 npm run tauri dev
 ```
+
+Run `npm run setup:native` to prepare the binaries separately, for example before running Cargo directly from `desktop/`.
 
 ## Test and build
 
@@ -79,4 +81,4 @@ npm run tauri dev
 ## Project layout
 
 - [`frontend/`](frontend/) contains the React and TypeScript interface.
-- [`desktop/`](desktop/) contains the Tauri configuration, Rust code, and bundled native libraries. See the bundled [libmpv license](desktop/lib/LICENSE).
+- [`desktop/`](desktop/) contains the Tauri configuration and Rust code. See the [bundled media components](desktop/lib/THIRD-PARTY.md) for upstream sources and licensing.

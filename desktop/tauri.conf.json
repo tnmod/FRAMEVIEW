@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "identifier": "com.frameview.app",
   "build": {
-    "beforeDevCommand": "npm run dev",
+    "beforeDevCommand": "npm run setup:native && npm run dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "npm run build",
+    "beforeBuildCommand": "npm run setup:native && npm run build",
     "frontendDist": "../dist"
   },
   "app": {
@@ -40,9 +40,13 @@
     "externalBin": [
       "binaries/ffprobe"
     ],
-    "resources": [
-      "lib/**/*"
-    ],
+    "resources": {
+      "lib/libmpv-2.dll": "libmpv-2.dll",
+      "lib/libmpv-wrapper.dll": "libmpv-wrapper.dll",
+      "lib/LICENSE": "licenses/libmpv-LICENSE.txt",
+      "lib/FFmpeg-LICENSE.txt": "licenses/FFmpeg-LICENSE.txt",
+      "lib/THIRD-PARTY.md": "licenses/THIRD-PARTY.md"
+    },
     "fileAssociations": [
       {
         "ext": ["mp4", "mkv", "avi", "mov", "webm", "flv", "wmv", "m4v", "ts", "mts", "m2ts", "vob"],
@@ -52,8 +56,13 @@
       }
     ],
     "windows": {
+      "webviewInstallMode": {
+        "type": "fixedRuntime",
+        "path": "Microsoft.WebView2.FixedVersionRuntime.157.0.4341.57.x64"
+      },
       "nsis": {
-        "installMode": "currentUser"
+        "installMode": "currentUser",
+        "installerHooks": "installer-hooks.nsh"
       }
     }
   }
