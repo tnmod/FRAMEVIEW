@@ -12,7 +12,7 @@ fn main() {
 fn copy_mpv_dlls() {
     let lib_dir = PathBuf::from("lib");
     if !lib_dir.exists() {
-        println!("cargo:warning=src-tauri/lib directory not found. libmpv will not be bundled.");
+        println!("cargo:warning=desktop/lib directory not found. libmpv will not be bundled.");
         return;
     }
 

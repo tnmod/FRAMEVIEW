@@ -59,7 +59,7 @@ cd FRAMEVIEW
 npm ci
 ```
 
-Create the `src-tauri/binaries` directory and copy the extracted `ffprobe.exe` to `src-tauri/binaries/ffprobe-x86_64-pc-windows-msvc.exe`. Tauri expects the executable at that path for development and production builds. The repository already includes the libmpv DLLs in `src-tauri/lib`. [Tauri sidecar naming guide](https://v2.tauri.app/develop/sidecar/)
+Create the `desktop/binaries` directory and copy the extracted `ffprobe.exe` to `desktop/binaries/ffprobe-x86_64-pc-windows-msvc.exe`. Tauri expects the executable at that path for development and production builds. The repository already includes the libmpv DLLs in `desktop/lib`. [Tauri sidecar naming guide](https://v2.tauri.app/develop/sidecar/)
 
 Start the desktop app.
 
@@ -74,6 +74,9 @@ npm run tauri dev
 | `npm test` | Run the Vitest suite |
 | `npm run build` | Type-check and build the frontend into `dist/` |
 | `npm run build:fast` | Compile the release desktop executable |
-| `npm run build:installer` | Create the Windows NSIS installer in `src-tauri/target/release/bundle/nsis/` with the default build configuration |
+| `npm run build:installer` | Create the Windows NSIS installer in `desktop/target/release/bundle/nsis/` with the default build configuration |
 
-The frontend uses React, TypeScript, Vite, Tailwind CSS, and Zustand. The desktop application uses Tauri 2 and Rust. See the bundled [libmpv license](src-tauri/lib/LICENSE).
+## Project layout
+
+- [`frontend/`](frontend/) contains the React and TypeScript interface.
+- [`desktop/`](desktop/) contains the Tauri configuration, Rust code, and bundled native libraries. See the bundled [libmpv license](desktop/lib/LICENSE).

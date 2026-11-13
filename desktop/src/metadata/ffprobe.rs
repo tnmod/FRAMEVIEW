@@ -20,12 +20,12 @@ pub fn find_ffprobe_binary() -> Result<PathBuf, String> {
         }
     }
 
-    // 2. Check src-tauri/binaries in project root
+    // 2. Check project-relative sidecar paths
     let candidates = [
-        "src-tauri/binaries/ffprobe-x86_64-pc-windows-msvc.exe",
+        "desktop/binaries/ffprobe-x86_64-pc-windows-msvc.exe",
         "binaries/ffprobe-x86_64-pc-windows-msvc.exe",
-        "../src-tauri/binaries/ffprobe-x86_64-pc-windows-msvc.exe",
-        "src-tauri/binaries/ffprobe.exe",
+        "../desktop/binaries/ffprobe-x86_64-pc-windows-msvc.exe",
+        "desktop/binaries/ffprobe.exe",
         "binaries/ffprobe.exe",
     ];
 
@@ -46,7 +46,7 @@ pub fn find_ffprobe_binary() -> Result<PathBuf, String> {
         }
     }
 
-    Err("ffprobe binary not found. Please ensure ffprobe is installed in src-tauri/binaries/".to_string())
+    Err("ffprobe binary not found. Please ensure ffprobe is installed in desktop/binaries/".to_string())
 }
 
 /// Run ffprobe against the given media file and parse JSON output

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { ChapterEngine } from '../src/services/ai/chapterEngine';
-import { parseVisionResponse } from '../src/services/ai/providerService';
-import { SceneMark, SmartChapter, VisionDescription } from '../src/types/ai';
+import { ChapterEngine } from '../frontend/services/ai/chapterEngine';
+import { parseVisionResponse } from '../frontend/services/ai/providerService';
+import { SceneMark, SmartChapter, VisionDescription } from '../frontend/types/ai';
 
 const visionConfig = {
   providerId: 'ollama_default',

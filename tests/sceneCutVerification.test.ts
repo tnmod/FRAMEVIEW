@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { parseSceneCutVerification } from '../src/services/ai/providerService';
+import { parseSceneCutVerification } from '../frontend/services/ai/providerService';
 
 describe('scene-cut vision decisions', () => {
   it('accepts a VLM cut decision and normalizes percentage confidence', () => {
